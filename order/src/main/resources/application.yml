@@ -1,0 +1,16 @@
+spring:
+  application:
+   name: order
+  datasource:
+    url: jdbc:postgresql://localhost:5432/order
+    username: myuser
+    password: secret
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  kafka:
+    bootstrap-servers: localhost:19092
+
+
+
