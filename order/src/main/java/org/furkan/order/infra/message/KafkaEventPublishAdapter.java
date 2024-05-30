@@ -1,15 +1,15 @@
 package org.furkan.order.infra.message;
 
+import io.craftgate.modulith.messaging.api.annotation.DomainComponent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.furkan.order.domain.order.notify.OrderCreateNotifyEvent;
 import org.furkan.order.domain.order.notify.OrderEventPublishPort;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Service;
 
 @Slf4j
-@Service
+@DomainComponent
 @RequiredArgsConstructor
 @ConditionalOnProperty(name = "kafka.enabled", havingValue = "true")
 public class KafkaEventPublishAdapter implements OrderEventPublishPort {

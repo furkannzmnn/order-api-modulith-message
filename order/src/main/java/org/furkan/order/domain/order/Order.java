@@ -41,9 +41,4 @@ public class Order extends AggregateRoot {
         order.registerMessage(OrderCreateNotifyEvent.of(order));
         return order;
     }
-    public void doNotify() {
-        this.registerMessage(OrderCreateNotifyEvent.of(this));
-        log.info("Order notified triggered: {}", this);
-    }
-
 }
